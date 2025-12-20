@@ -67,73 +67,68 @@
           id="mobile-menu-2"
         >
           <ul
-            class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 bg-gray-500 rounded-full py-3 px-6 capitalize"
+            class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 bg-gray-500 rounded-full py-3 px-6 capitalize "
+            (mouseleave)="close()"
           >
             <li>
-              <button
-                id="dropdownHoverButton"
-                data-dropdown-toggle="dropdownHover"
-                data-dropdown-trigger="hover"
-                class="inline-flex items-center justify-center text-white bg-brand box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm focus:outline-none"
-                type="button"
-              >
-                Apps
-                <svg
-                  class="w-4 h-4 ms-1.5 -me-0.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
+              <!-- dropdown -->
+              <div class="relative group inline-block DropdownWrp">
+                <button
+                  class="DropdownBtn inline-flex items-center justify-center text-white bg-brand hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium rounded-base text-sm"
+                  type="button"
+                  (mousemove)="open()"
                 >
-                  <path
+                  Apps
+                  <svg
+                    class="w-4 h-4 ms-1.5 transition-transform duration-200 group-hover:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m19 9-7 7-7-7"
-                  />
-                </svg>
-              </button>
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m19 9-7 7-7-7"
+                    />
+                  </svg>
+                </button>
 
-              <!-- Dropdown menu -->
-              <div
-                id="dropdownHover"
-                class="z-10 hidden bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-44"
-              >
-                <ul class="p-2 text-sm text-body font-medium" aria-labelledby="dropdownHoverButton">
-                  <li>
-                    <a
-                      href="#"
-                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                      >Dashboard</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                      >Settings</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                      >Earnings</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
-                      >Sign out</a
-                    >
-                  </li>
-                </ul>
+                <!-- Dropdown -->
+                @if(isOpen==true){
+                <div
+                  (mousemove)="open()"
+                  (mouseleave)="close()"
+                  class="absolute left-0 top-7 mt-2 text-white group-hover:visible group-hover:opacity-100 transition-opacity duration-200 bg-gray-700 rounded-xl shadow-lg w-72 z-50  "
+                >
+                  <ul class="p-2 text-sm font-medium text-body">
+                    <li class="hover:bg-gray-400 rounded-xl">
+                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
+                        >Dashboard</a
+                      >
+                    </li>
+                    <li class="hover:bg-gray-400 rounded-xl">
+                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
+                        >Settings</a
+                      >
+                    </li>
+                    <li class="hover:bg-gray-400 rounded-xl">
+                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
+                        >Earnings</a
+                      >
+                    </li>
+                    <li class="hover:bg-gray-400 rounded-xl">
+                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
+                        >Sign out</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                }
               </div>
             </li>
+
             <li>
               <a
                 routerLink="/pricing"
@@ -252,11 +247,12 @@
     </div>
     <div class="px-4 py-6 bg-neutral-secondary-soft md:flex md:items-center md:justify-between">
       <span class="text-sm text-body sm:text-center"
-        >© 2007 <a href="https://flowbite.com/"> 2025 KPI Software Inc</a> 
+        >© 2007 <a href="https://flowbite.com/"> 2025 KPI Software Inc</a>
       </span>
-      
 
-      <button class="bg-gray-500 py-1 px-2 rounded-sm">English <i class="fa-solid fa-ellipsis"></i></button>
+      <button class="bg-gray-500 py-1 px-2 rounded-sm">
+        English <i class="fa-solid fa-ellipsis"></i>
+      </button>
     </div>
   </div>
 </footer>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bg-component',
@@ -9,4 +9,8 @@ import { Component, Input } from '@angular/core';
 })
 export class BgComponent {
   @Input() bg_color:string='grey';
+  @Input() title:string='';
+  @Input() text:string='';
+  @Input() btnName:string='';
+  @Input() imgsrc:string='';
 }

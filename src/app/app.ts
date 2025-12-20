@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { BgComponent } from './bg-component/bg-component';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +10,17 @@ import { BgComponent } from './bg-component/bg-component';
 })
 export class App {
   protected readonly title = signal('project1');
+   isOpen = false;
+
+  open() {
+    this.isOpen = true;
+  }
+
+  close() {
+    this.isOpen = false;
+  }
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
 }
