@@ -13,4 +13,6 @@ export class BgComponent {
   @Input() text:string='';
   @Input() btnName:string='';
   @Input() imgsrc:string='';
+  @Input() nextBtn:boolean=false;
+  @Input() titlePlus:string='';
 }

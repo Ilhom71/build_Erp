@@ -5,8 +5,12 @@
     <!-- LEFT: TITLE -->
     <div class="w-full flex py-20">
       <div class="w-3/5">
-        <h1 class="text-5xl font-bold leading-tight">
+        <h1 class="text-5xl font-bold leading-tight w-[90%]">
           {{ title }}
+          <br/>
+          @if(titlePlus){
+            {{titlePlus}}
+          }
         </h1>
       </div>
 
@@ -18,16 +22,18 @@
 
         <div class="flex gap-4">
           <button
-            class="bg-white text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-200 transition"
+            class="bg-white text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-700 hover:border hover:border-white hover:text-white transition"
           >
             {{btnName}}
           </button>
 
-          <button
+          @if(nextBtn){
+            <button
             class="border border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-800 transition"
           >
             Login
           </button>
+          }
         </div>
       </div>
     </div>
