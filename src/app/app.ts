@@ -10,17 +10,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('project1');
-   isOpen = false;
 
-  open() {
-    this.isOpen = true;
-  }
-
-  close() {
-    this.isOpen = false;
-  }
-
-  toggle() {
-    this.isOpen = !this.isOpen;
-  }
 }
