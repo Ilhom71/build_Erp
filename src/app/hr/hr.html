@@ -1,38 +1,33 @@
-<div class="w-full flex justify-center items-center h-screen m-auto my-20">
-  <div class="w-4/5 h-4/5 rounded-xl border border-gray-500 box-border p-5 flex">
-    <div class="w-1/2 flex flex-col gap-1">
-      <!-- <div class="w-4/5 border border-gray-400 p-3 rounded-xl flex gap-1 bg-gray-100">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+@defer (on viewport) {
+  <div class="w-full flex justify-center items-center min-h-screen my-20 animation1">
+    <div class="w-4/5 h-4/5 rounded-xl border border-gray-500 box-border p-5 flex">
+      
+      <div class="w-1/2 flex flex-col gap-2">
+        @for (item of arr(); track item.id) {
+          <div
+            class="w-4/5 border border-gray-400 p-3 rounded-xl flex gap-2 bg-gray-100 cursor-pointer"
+            (click)="setActive(item.id)"
+          >
+            <mat-icon fontIcon="home"></mat-icon>
 
-        <div class="flex flex-col gap-1">
-          <h4 class="text-xl font-bold">salom</h4>
-          <p class="text-gray-400">salom salom</p>
-          <a href="#" class="text-sm decoration-2 text-blue-400">this is here > </a>
-        </div>
+            <div class="flex flex-col gap-1 p-1">
+              <h4 class="text-xl font-bold">{{ item.title }}</h4>
 
-
-
-      </div> -->
-
-      @for(item of arr() ;track item.id){
-      <div class="w-4/5 border border-gray-400 p-3 rounded-xl flex gap-1 bg-gray-100" (click)="setActive(item.id)">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-
-        <div class="flex flex-col gap-1 p-1">
-          <h4 class="text-xl font-bold">{{ item.title }}</h4>
-          @if(item.active){
-
-          <p class="text-gray-400">{{ item.text }}</p>
-          <a href="#" class="text-sm decoration-2 text-blue-400">this is here > </a>
-          }
-        </div>
+              @if (item.active) {
+                <p class="text-gray-400">{{ item.text }}</p>
+                <a href="#" class="text-sm text-blue-500">this is here &gt;</a>
+              }
+            </div>
+          </div>
+        }
       </div>
-      }
-    </div>
-    <div class="w-3/5  overflow-hidden">
-      <img
-        [src]="img()"
-      />
+
+      <div class="w-3/5 overflow-hidden flex justify-center items-center">
+        <img [src]="img()" class="w-full h-full object-cover" />
+      </div>
+
     </div>
   </div>
-</div>
+} @placeholder {
+  <div class="min-h-screen"></div>
+}

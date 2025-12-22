@@ -1,15 +1,15 @@
 <div class="relative">
   <div class="bg-gray-700 h-screen flex absolute top-0 w-full -z-1"></div>
 
-  <div class="w-4/5 mx-auto flex flex-col text-white">
+  <div class="w-4/5 mx-auto flex flex-col text-white animation">
     <!-- LEFT: TITLE -->
-    <div class="w-full flex py-20">
+    <div class="w-full flex py-20 animation1">
       <div class="w-3/5">
         <h1 class="text-5xl font-bold leading-tight w-[90%]">
           {{ title }}
-          <br/>
+          <br />
           @if(titlePlus){
-            {{titlePlus}}
+          {{ titlePlus }}
           }
         </h1>
       </div>
@@ -24,11 +24,11 @@
           <button
             class="bg-white text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-700 hover:border hover:border-white hover:text-white transition"
           >
-            {{btnName}}
+            {{ btnName }}
           </button>
 
           @if(nextBtn){
-            <button
+          <button
             class="border border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-800 transition"
           >
             Login
@@ -40,10 +40,14 @@
 
     <!-- carusel -->
 
+    @defer (on viewport) {
     <div
-      class="w-full min-fit bg-amber-50 relative rounded-xl overflow-hidden flex justify-center items-center"
+      class="w-full min-fit bg-amber-50 relative rounded-xl overflow-hidden flex justify-center items-center animation1"
     >
       <img src="{{ imgsrc }}" alt="home-showcase-gif" class="w-full h-full" />
     </div>
+    }@placeholder(minimum 500ms) {
+    <p></p>
+    }
   </div>
 </div>
