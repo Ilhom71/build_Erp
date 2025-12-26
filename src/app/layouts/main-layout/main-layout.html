@@ -7,9 +7,17 @@
 />
 
 <header class="">
-  <nav class="fixed top-0 left-0 w-full z-50 bg-gray-700 h-24 flex items-center px-4 lg:px-6">
+  <nav
+    [class.bg-sky-500]="!isScrolled"
+    [class.bg-sky-800]="isScrolled"
+    class="fixed top-0 left-0 w-full z-50 h-24 flex items-center px-4 lg:px-6"
+  >
     <div class="flex justify-between items-center mx-auto w-4/5 h-full">
       <a routerLink="" class="flex items-center">
+        <mat-icon class="text-white text-2xl" style="color: white !important"
+          >dashboard</mat-icon
+        >
+
         <span class="self-center text-xl font-semibold whitespace-nowrap text-white"
           >Build ERP</span
         >
@@ -67,8 +75,10 @@
           id="mobile-menu-2"
         >
           <ul
-            class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 bg-gray-500 rounded-full py-3 px-6 capitalize "
+            class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 rounded-full py-3 px-6 capitalize"
             (mouseleave)="close()"
+            [class.bg-sky-400]="!isScrolled"
+            [class.bg-sky-900]="isScrolled"
           >
             <li>
               <!-- dropdown -->
@@ -100,10 +110,10 @@
                 <div
                   (mousemove)="open()"
                   (mouseleave)="close()"
-                  class="absolute left-0 top-6  mt-2 text-white group-hover:visible group-hover:opacity-100 transition-opacity duration-200 bg-gray-700 rounded-xl shadow-lg w-72 z-50  "
+                  class="absolute left-0 top-6 mt-2 text-white group-hover:visible group-hover:opacity-100 transition-opacity duration-200 bg-sky-700 rounded-xl shadow-lg w-72 z-50"
                 >
                   <ul class="p-2 text-sm font-medium text-body">
-                    <li class="hover:bg-gray-400 rounded-xl">
+                    <li class="hover:bg-sky-400 rounded-xl">
                       <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
                         >Dashboard</a
                       >
@@ -177,7 +187,7 @@
   </section>
 </div>
 
-<footer class="bg-neutral-primary bg-gray-700 text-white">
+<footer class="bg-neutral-primary bg-sky-500 text-white">
   <div class="mx-auto w-4/5 max-w-screen-xl">
     <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
       <div>
@@ -251,7 +261,7 @@
       </span>
 
       <button class="bg-gray-500 py-1 px-2 rounded-sm">
-        English <i class="fa-solid fa-ellipsis"></i>
+        Uzbek <i class="fa-solid fa-ellipsis"></i>
       </button>
     </div>
   </div>

@@ -12,7 +12,7 @@ export class MiddelwareCard2 {
 No need to worry about adding data manually, all of the integration is done by the KPI tech
 support with care and attention to the details.`;
 
-  @Input() imglink =
+  @Input() imgSrc =
     'https://www.kpi.com/wp-content/themes/thesaas-child/files/images/home-img/mobile-payway.png';
 
   @Input() leftSide = true;
