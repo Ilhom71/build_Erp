@@ -19,8 +19,11 @@ export class Faq {
       link: '',
       img: '',
       active: false,
+      iconName:"none"
+
+      
     },
-     {
+    {
       id: 2,
       title: 'Can I use only one KPI application or I have to use all?',
       text: `  Yes, KPI applications are cross-functional and work best together, however, if you only
@@ -30,7 +33,10 @@ export class Faq {
       link: '',
       img: '',
       active: false,
-    }, {
+      iconName:"none"
+
+    },
+    {
       id: 3,
       title: 'Can I use only one KPI application or I have to use all?',
       text: `  Yes, KPI applications are cross-functional and work best together, however, if you only
@@ -40,7 +46,10 @@ export class Faq {
       link: '',
       img: '',
       active: false,
-    }, {
+      iconName:"none"
+
+    },
+    {
       id: 4,
       title: 'Can I use only one KPI application or I have to use all?',
       text: `  Yes, KPI applications are cross-functional and work best together, however, if you only
@@ -50,8 +59,10 @@ export class Faq {
       link: '',
       img: '',
       active: false,
+      iconName:"none"
+
     },
-     {
+    {
       id: 5,
       title: 'Can I use only one KPI application or I have to use all?',
       text: `  Yes, KPI applications are cross-functional and work best together, however, if you only
@@ -61,19 +72,18 @@ export class Faq {
       link: '',
       img: '',
       active: false,
+      iconName:"none"
+
     },
   ];
 
-
-  OnOpen(id:number):void{
-    this.arr.map(val=>{
-      if(val.id==id){
-        val.active=!val.active
+  OnOpen(id: number): void {
+    this.arr.map((val) => {
+      if (val.id == id) {
+        val.active = !val.active;
       }
 
-      return val
-    })
+      return val;
+    });
   }
-
-
 }

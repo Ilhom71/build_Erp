@@ -4,5 +4,6 @@ export interface HrInterface {
     text:string,
     link:string,
     img:string,
-    active:boolean
+    active:boolean,
+    iconName:string
 }
