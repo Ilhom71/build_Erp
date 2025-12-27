@@ -14,9 +14,7 @@
   >
     <div class="flex justify-between items-center mx-auto w-4/5 h-full">
       <a routerLink="" class="flex items-center">
-        <mat-icon class="text-white text-2xl" style="color: white !important"
-          >dashboard</mat-icon
-        >
+        <mat-icon class="text-white text-2xl" style="color: white !important">dashboard</mat-icon>
 
         <span class="self-center text-xl font-semibold whitespace-nowrap text-white"
           >Build ERP</span
@@ -80,65 +78,13 @@
             [class.bg-sky-400]="!isScrolled"
             [class.bg-sky-900]="isScrolled"
           >
-            <li>
-              <!-- dropdown -->
-              <div class="relative group inline-block DropdownWrp">
-                <button
-                  class="DropdownBtn inline-flex items-center justify-center text-white bg-brand hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium rounded-base text-sm"
-                  type="button"
-                  (mousemove)="open()"
-                >
-                  Apps
-                  <svg
-                    class="w-4 h-4 ms-1.5 transition-transform duration-200 group-hover:rotate-180"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="m19 9-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-
-                <!-- Dropdown -->
-                @if(isOpen==true){
-                <div
-                  (mousemove)="open()"
-                  (mouseleave)="close()"
-                  class="absolute left-0 top-6 mt-2 text-white group-hover:visible group-hover:opacity-100 transition-opacity duration-200 bg-sky-700 rounded-xl shadow-lg w-72 z-50"
-                >
-                  <ul class="p-2 text-sm font-medium text-body">
-                    <li class="hover:bg-sky-400 rounded-xl">
-                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
-                        >Dashboard</a
-                      >
-                    </li>
-                    <li class="hover:bg-gray-400 rounded-xl">
-                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
-                        >Settings</a
-                      >
-                    </li>
-                    <li class="hover:bg-gray-400 rounded-xl">
-                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
-                        >Earnings</a
-                      >
-                    </li>
-                    <li class="hover:bg-gray-400 rounded-xl">
-                      <a href="#" class="block p-2 rounded hover:bg-neutral-tertiary-medium"
-                        >Sign out</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                }
-              </div>
-            </li>
-
+            <li
+              routerLink=""
+              class="block py-2 pr-4 pl-3 text-white border-b botext-white-100 hovetext-white-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white-400 lg:dark:hover:text-white dark:hovetext-white-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:botext-white-700"
+            >
+          <a routerLink="" class="block py-2 pr-4 pl-3 text-white border-b botext-white-100 hovetext-white-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white-400 lg:dark:hover:text-white dark:hovetext-white-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:botext-white-700">
+            Home
+          </a></li>
             <li>
               <a
                 routerLink="/pricing"

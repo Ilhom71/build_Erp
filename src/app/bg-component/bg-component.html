@@ -1,35 +1,44 @@
 <div class="relative">
-  <div class="bg-sky-500 h-screen flex absolute top-0 w-full -z-1"></div>
+  <!-- BACKGROUND -->
+  <div class="bg-sky-500 min-h-screen absolute top-0 w-full -z-10"></div>
 
-  <div class="w-4/5 mx-auto flex flex-col text-white animation">
-    <!-- LEFT: TITLE -->
-    <div class="w-full flex py-20 animation1">
-      <div class="w-3/5">
-        <h1 class="text-5xl font-bold leading-tight w-[90%]">
+  <div class="max-w-7xl mx-auto px-4 flex flex-col text-white">
+
+    <!-- HERO CONTENT -->
+    <div
+      class="flex flex-col md:flex-row gap-10 py-20 items-start md:items-center"
+    >
+      <!-- LEFT: TITLE -->
+      <div class="w-full md:w-3/5">
+        <h1
+          class="text-3xl md:text-5xl font-bold leading-tight md:w-[90%]"
+        >
           {{ title }}
           <br />
           @if(titlePlus){
-          {{ titlePlus }}
+            {{ titlePlus }}
           }
         </h1>
       </div>
 
       <!-- RIGHT: DESCRIPTION + BUTTONS -->
-      <div class="w-2/5 space-y-6">
-        <p class="text-lg text-gray-200">
+      <div class="w-full md:w-2/5 space-y-6">
+        <p class="text-base md:text-lg text-gray-200">
           {{ text }}
         </p>
 
-        <div class="flex gap-4">
+        <div class="flex flex-col sm:flex-row gap-4">
           <button
-            class="bg-white text-slate-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-700 hover:border hover:border-white hover:text-white transition"
+            class="bg-white text-slate-800 font-semibold py-3 px-6 rounded-lg
+                   hover:bg-gray-700 hover:border hover:border-white hover:text-white transition"
           >
             {{ btnName }}
           </button>
 
           @if(nextBtn){
           <button
-            class="border border-white text-white font-semibold py-3 px-6 rounded-lg hover:bg-white hover:text-slate-800 transition"
+            class="border border-white text-white font-semibold py-3 px-6 rounded-lg
+                   hover:bg-white hover:text-slate-800 transition"
           >
             Login
           </button>
@@ -38,16 +47,21 @@
       </div>
     </div>
 
-    <!-- carusel -->
-
+    <!-- CAROUSEL -->
     @defer (on viewport) {
-    <div
-      class="w-full min-fit bg-amber-50 relative rounded-xl overflow-hidden flex justify-center items-center animation1"
-    >
-      <img src="{{ imgsrc }}" alt="home-showcase-gif" class="w-full h-full" />
-    </div>
-    }@placeholder(minimum 500ms) {
-    <p></p>
+      <div
+        class="w-full bg-amber-50 rounded-xl overflow-hidden flex justify-center items-center"
+      >
+        <img
+          src="{{ imgsrc }}"
+          alt="home-showcase-gif"
+          class="w-full h-auto object-cover"
+        />
+      </div>
+    } @placeholder(minimum 500ms) {
+      <p></p>
     }
+
   </div>
 </div>
+

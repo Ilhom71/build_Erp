@@ -1,49 +1,68 @@
-<div class="min-h-screen flex justify-center items-center">
+<div class="min-h-screen flex justify-center items-center px-4">
   <div
-    class="w-4/5 h-[80vh] bg-sky-500 flex flex-col items-center justify-center gap-6 py-10 text-white rounded-2xl"
+    class="w-full max-w-6xl min-h-[80vh] bg-sky-500
+           flex flex-col items-center justify-center
+           gap-6 py-10 text-white rounded-2xl"
   >
-    <!-- Iconlar -->
-    <div class="flex items-center gap-2 bg-sky-400 rounded-sm h-16 px-4">
-      <span class="inline-flex items-center justify-center p-2 bg-blue-500 rounded">
-        <mat-icon fontIcon="home" class="text-white text-2xl"></mat-icon>
+    <!-- ICONS -->
+    <div
+      class="flex flex-wrap justify-center gap-2 bg-sky-400
+             rounded-md px-4 py-3"
+    >
+      <span class="icon-box bg-blue-500">
+        <mat-icon fontIcon="home"></mat-icon>
       </span>
-      <span class="inline-flex items-center justify-center p-2 bg-green-500 rounded">
-        <mat-icon fontIcon="trending_up" class="text-white text-2xl"></mat-icon>
+      <span class="icon-box bg-green-500">
+        <mat-icon fontIcon="trending_up"></mat-icon>
       </span>
-      <span class="inline-flex items-center justify-center p-2 bg-yellow-500 rounded">
-        <mat-icon fontIcon="support" class="text-white text-2xl"></mat-icon>
+      <span class="icon-box bg-yellow-500">
+        <mat-icon fontIcon="support"></mat-icon>
       </span>
-      <span class="inline-flex items-center justify-center p-2 bg-purple-500 rounded">
-        <mat-icon fontIcon="shopping_cart" class="text-white text-2xl"></mat-icon>
+      <span class="icon-box bg-purple-500">
+        <mat-icon fontIcon="shopping_cart"></mat-icon>
       </span>
-      <span class="inline-flex items-center justify-center p-2 bg-red-500 rounded">
-        <mat-icon fontIcon="analytics" class="text-white text-2xl"></mat-icon>
+      <span class="icon-box bg-red-500">
+        <mat-icon fontIcon="analytics"></mat-icon>
       </span>
     </div>
 
-    <!-- Sarlavha -->
-    <h1 class="text-5xl text-center font-bold">
+    <!-- TITLE -->
+    <h1
+      class="text-3xl sm:text-4xl md:text-5xl
+             text-center font-bold leading-tight px-2"
+    >
       Biznesingizni yangi darajaga <br />
       ko‘tarishga tayyormisiz?
     </h1>
 
-    <!-- Tavsiyalar -->
-    <p class="text-center text-lg text-gray-300 max-w-2xl">
-      Endi barcha jarayonlaringizni bitta platformada boshqarishingiz mumkin: mijozlar, savdo, marketing va qo‘llab-quvvatlash. Sizning biznesingiz uchun qulay va tezkor yechim.
+    <!-- DESCRIPTION -->
+    <p
+      class="text-center text-base sm:text-lg text-gray-200
+             max-w-2xl px-4"
+    >
+      Endi barcha jarayonlaringizni bitta platformada boshqarishingiz mumkin:
+      mijozlar, savdo, marketing va qo‘llab-quvvatlash.
+      Sizning biznesingiz uchun qulay va tezkor yechim.
     </p>
 
-    <!-- Tugmalar -->
-    <div class="flex gap-4 mt-6">
-      <!-- Asosiy tugma -->
+    <!-- BUTTONS -->
+    <div
+      class="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto px-6"
+    >
       <button
-        class="px-8 py-3 rounded-sm bg-white text-gray-900 font-semibold hover:bg-sky-700 transition-all shadow-lg hover:border-white  hover:text-white"
+        class="w-full sm:w-auto px-8 py-3 rounded-sm
+               bg-white text-gray-900 font-semibold
+               hover:bg-sky-700 hover:text-white
+               transition shadow-lg"
       >
-        Bepul sinovni boshlash
+        Biz bilan bog‘lanish
       </button>
 
-      <!-- Ikkinchi tugma -->
       <button
-        class="px-8 py-3 rounded-sm border border-white/30 text-white font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 min-w-40"
+        class="w-full sm:w-auto px-8 py-3 rounded-sm
+               border border-white/30 text-white font-medium
+               hover:bg-white hover:text-gray-900
+               transition min-w-40"
         routerLink="/auth"
       >
         Kirish
