@@ -12,13 +12,43 @@ export class MiddelwareCarusel implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('carouselContainer') carouselContainer!: ElementRef;
   @ViewChild('carouselTrack') carouselTrack!: ElementRef;
   
-  cards = [
-    'Card 1','Card 2','Card 3','Card 4','Card 5',
-    'Card 6','Card 7','Card 8','Card 9','Card 10',
-    'Card 11','Card 12'
-  ];
+cards: any[] = [
+  { 
+    name: 'Budget', 
+    logo: 'https://img.icons8.com/fluency/96/000000/money-bag.png'
+  },
+  { 
+    name: 'Team', 
+    logo: 'https://img.icons8.com/fluency/96/000000/conference.png'
+  },
+  { 
+    name: 'Stock', 
+    logo: 'https://img.icons8.com/fluency/96/000000/package.png'
+  },
+  { 
+    name: 'Deals', 
+    logo: 'https://img.icons8.com/fluency/96/000000/sales-performance.png'
+  },
+  { 
+    name: 'Orders', 
+    logo: 'https://img.icons8.com/fluency/96/000000/purchase-order.png'
+  },
+  { 
+    name: 'Factory', 
+    logo: 'https://img.icons8.com/fluency/96/000000/factory.png'
+  },
+  { 
+    name: 'Taxes', 
+    logo: 'https://img.icons8.com/fluency/96/000000/accounting.png'
+  },
+  { 
+    name: 'Charts', 
+    logo: 'https://img.icons8.com/fluency/96/000000/combo-chart.png'
+  }
+];
 
-  allCards: string[] = [];
+  // allCards object array bo'lishi kerak
+  allCards: any[] = [];
   animationId: number = 0;
   speed = 1; // px per frame
   position = 0;
@@ -39,7 +69,7 @@ export class MiddelwareCarusel implements OnInit, OnDestroy, AfterViewInit {
         this.position -= this.speed;
         
         // Agar birinchi to'plamning oxiriga yetgan bo'lsak
-        if (Math.abs(this.position) >= this.cards.length * 166) { // 150px + 16px margin
+        if (Math.abs(this.position) >= this.cards.length * 136) { // 120px + 16px margin
           this.position = 0;
         }
         
@@ -47,7 +77,6 @@ export class MiddelwareCarusel implements OnInit, OnDestroy, AfterViewInit {
           this.carouselTrack.nativeElement.style.transform = `translateX(${this.position}px)`;
         }
       }
-      
       this.animationId = requestAnimationFrame(animate.bind(this));
     };
     
@@ -56,12 +85,10 @@ export class MiddelwareCarusel implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit() {}
 
-  // Sichqoncha ustiga olganda to'xtatish
   onMouseEnter() {
     this.isPaused = true;
   }
 
-  // Sichqoncha chiqqanda davom ettirish
   onMouseLeave() {
     this.isPaused = false;
   }

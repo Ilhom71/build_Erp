@@ -11,7 +11,7 @@ import { Faq } from "../faq/faq";
 
 @Component({
   selector: 'app-home',
-  imports: [BgComponent, Hr, Middelware, MiddelwareCard, MiddelwareCard2, LoginCard, MiddelwareCarusel, Faq],
+  imports: [BgComponent, Hr, Middelware, MiddelwareCard, MiddelwareCard2, LoginCard, Faq],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
