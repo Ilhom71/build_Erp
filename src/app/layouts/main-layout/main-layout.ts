@@ -18,6 +18,7 @@ export class MainLayout implements OnInit {
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.checkScroll();
+      
     }
   }
 

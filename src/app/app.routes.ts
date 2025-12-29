@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
-import { Pricing } from './pricing/pricing';
 import { Customers } from './customers/customers';
 import { Resources } from './resources/resources';
 import { Contact } from './contact/contact';
@@ -17,7 +16,6 @@ export const routes: Routes = [
     component: MainLayout,
     children: [
       { path: '', component: Home },
-      { path: 'pricing', component: Pricing },
       { path: 'customers', component: Customers },
       { path: 'resources', component: Resources },
       { path: 'contact', component: Contact },

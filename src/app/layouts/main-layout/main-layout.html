@@ -23,7 +23,7 @@
 
       <!-- this is wrp menu and auth btn -->
       <div class="flex gap-x-10">
-        <div class="flex items-center lg:order-2 b">
+        <div class="flex items-center lg:order-2">
           <a
             routerLink="auth"
             class="text-white dark:text-white hovetext-white-50 focus:ring-4 focus:text-white-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hovetext-white-700 focus:outline-none dark:focus:text-white-800"
@@ -40,6 +40,7 @@
             class="inline-flex items-center p-2 ml-1 text-sm text-white rounded-lg lg:hidden hovetext-white-100 focus:outline-none focus:ring-2 focus:text-white-200 dark:text-white-400 dark:hovetext-white-700 dark:focus:text-white-600"
             aria-controls="mobile-menu-2"
             aria-expanded="false"
+            (click)="toggle()"
           >
             <span class="sr-only">Open main menu</span>
             <svg
@@ -74,24 +75,19 @@
         >
           <ul
             class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 rounded-full py-3 px-6 capitalize"
-            (mouseleave)="close()"
-            [class.bg-sky-400]="!isScrolled"
-            [class.bg-sky-900]="isScrolled"
           >
             <li
               routerLink=""
               class="block py-2 pr-4 pl-3 text-white border-b botext-white-100 hovetext-white-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white-400 lg:dark:hover:text-white dark:hovetext-white-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:botext-white-700"
             >
-          <a routerLink="" class="block py-2 pr-4 pl-3 text-white border-b botext-white-100 hovetext-white-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white-400 lg:dark:hover:text-white dark:hovetext-white-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:botext-white-700">
-            Home
-          </a></li>
-            <li>
               <a
-                routerLink="/pricing"
+                routerLink=""
                 class="block py-2 pr-4 pl-3 text-white border-b botext-white-100 hovetext-white-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white-400 lg:dark:hover:text-white dark:hovetext-white-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:botext-white-700"
-                >Pricing</a
               >
+                Home
+              </a>
             </li>
+
             <li>
               <a
                 routerLink="customers"
@@ -123,11 +119,74 @@
           </ul>
         </div>
       </div>
+      @if(isOpen){
+            <div
+        [class.hidden]="!isOpen"
+        [class.bg-sky-500]="!isScrolled"
+        [class.bg-sky-800]="isScrolled"
+        class="lg:hidden justify-between items-center w-full lg:flex lg:order-1 absolute top-20 left-0"
+        id="mobile-menu-2"
+      >
+        <ul
+          class="flex flex-col mt-4 font-medium rounded-full py-3 px-6 capitalize lg:flex-row lg:space-x-8 lg:mt-0"
+        >
+          <li>
+            <a
+              routerLink=""
+              class="block py-2 px-3 text-white border-b border-transparent hover:text-primary-700 lg:border-0 lg:hover:bg-transparent dark:text-white lg:dark:hover:text-white"
+              (click)="toggle()"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="customers"
+              class="block py-2 px-3 text-white border-b border-transparent hover:text-primary-700 lg:border-0 lg:hover:bg-transparent dark:text-white lg:dark:hover:text-white"
+              (click)="toggle()"
+            >
+              Customers
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="resources"
+              class="block py-2 px-3 text-white border-b border-transparent hover:text-primary-700 lg:border-0 lg:hover:bg-transparent dark:text-white lg:dark:hover:text-white"
+              (click)="toggle()"
+            >
+              Resources
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="contact"
+              class="block py-2 px-3 text-white border-b border-transparent hover:text-primary-700 lg:border-0 lg:hover:bg-transparent dark:text-white lg:dark:hover:text-white"
+              (click)="toggle()"
+            >
+              Contact
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="blog"
+              class="block py-2 px-3 text-white border-b border-transparent hover:text-primary-700 lg:border-0 lg:hover:bg-transparent dark:text-white lg:dark:hover:text-white"
+              (click)="toggle()"
+            >
+              Blog
+            </a>
+          </li>
+        </ul>
+      </div>
+      }
     </div>
   </nav>
 </header>
 
-<div class="container pt-24 m-auto">
+<div class="pt-24 m-auto">
   <section class="min-h-screen flex flex-col">
     <router-outlet></router-outlet>
   </section>

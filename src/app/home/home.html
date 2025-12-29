@@ -10,8 +10,11 @@
 
 <app-hr></app-hr>
 <app-middelware>
-  <div class="flex gap-4">
-    <!-- 1-karta -->
+
+  <!-- TOP 2 CARDS -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10"
+  >
     <app-middelware-card
       title="Bizning xizmatlarimiz"
       text="Biznesingizni tezkor rivojlantirish uchun barcha zarur vositalarni bitta platformada taqdim etamiz."
@@ -19,7 +22,6 @@
     >
     </app-middelware-card>
 
-    <!-- 2-karta -->
     <app-middelware-card
       title="Statistik va tahlil"
       text="Savdo, mijozlar va marketing jarayonlaringizni qulay va samarali tahlil qiling."
@@ -28,23 +30,28 @@
     </app-middelware-card>
   </div>
 
-  <!-- 1-karta 2 turi -->
-  <app-middelware-card-2
-    title="Mijozlarni qo‘llab-quvvatlash"
-    text="Platforma orqali mijozlaringiz bilan oson muloqot qiling va qo‘llab-quvvatlash jarayonlarini tezlashtiring."
-    imgSrc="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600"
-  >
-  </app-middelware-card-2>
+  <!-- CARD TYPE 2 -->
+  <div class="flex flex-col gap-16">
 
-  <!-- 2-karta 2 turi (leftSide false) -->
-  <app-middelware-card-2
-    [leftSide]="false"
-    title="Buyurtma va savdo boshqaruvi"
-    text="Barcha buyurtmalar va savdo jarayonlarini bir joydan kuzatib boring, biznesingizni samarali boshqaring."
-    imgSrc="https://images.pexels.com/photos/4016847/pexels-photo-4016847.jpeg?auto=compress&cs=tinysrgb&w=600"
-  >
-  </app-middelware-card-2>
+    <app-middelware-card-2
+      title="Mijozlarni qo‘llab-quvvatlash"
+      text="Platforma orqali mijozlaringiz bilan oson muloqot qiling va qo‘llab-quvvatlash jarayonlarini tezlashtiring."
+      imgSrc="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600"
+    >
+    </app-middelware-card-2>
+
+    <app-middelware-card-2
+      [leftSide]="false"
+      title="Buyurtma va savdo boshqaruvi"
+      text="Barcha buyurtmalar va savdo jarayonlarini bir joydan kuzatib boring, biznesingizni samarali boshqaring."
+      imgSrc="https://images.pexels.com/photos/4016847/pexels-photo-4016847.jpeg?auto=compress&cs=tinysrgb&w=600"
+    >
+    </app-middelware-card-2>
+
+  </div>
+
 </app-middelware>
+
 
 <app-login-card></app-login-card>
 <app-faq></app-faq>
