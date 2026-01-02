@@ -1,14 +1,25 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from './service/language';
 
 @Component({
   selector: 'app-root',
-  standalone:true,
+  standalone: true,
+  imports: [RouterOutlet, CommonModule, TranslateModule],
   templateUrl: './app.html',
-  imports: [RouterOutlet],
-  styleUrl: './app.css'
+  styleUrls: ['./app.css'],
 })
 export class App {
-  protected readonly title = signal('project1');
+  currentLang = signal('uz');
 
+  // constructor(private langService: LanguageService) {
+  //   this.currentLang.set(this.langService.getLang());
+  // }
+
+  // changeLang(lang: 'uz' | 'en' | 'ru') {
+  //   this.langService.setLang(lang);
+  //   this.currentLang.set(lang);
+  // }
 }
